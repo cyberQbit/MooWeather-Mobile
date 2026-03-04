@@ -1,145 +1,49 @@
-# 🌤️ MooWeather
+## 🌤️ MooWeather - Advanced Full-Stack Weather App
 
-<div align="center">
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![UI/UX](https://img.shields.io/badge/UI%2FUX-Glassmorphism-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**AccuWeather ve Google Weather tarzında tasarlanmış, modern ve kullanıcı dostu bir arayüze sahip, Flutter ile geliştirilmiş Türkçe hava durumu uygulaması.**
+MooWeather is a modern, feature-rich weather application built with Flutter. It goes beyond simple API fetching by integrating a custom **C# .NET Backend** for user authentication and cross-device cloud synchronization.
 
-</div>
+> ⚠️ **Note:** This repository contains only the frontend (Mobile App) source code. To run this app with full functionality, you need the Backend API.
+> 👉 **[Click here for the MooWeather C# .NET Backend Repository](https://github.com/cyberQbit/MooWeather-Backend)**
+
+## ✨ Key Features
+
+* **🎨 Premium Glassmorphism UI:** A sleek, frosted-glass design with dynamic gradients that change based on the selected theme (Day/Night).
+* **🌍 Multi-Language Support:** Fully localized in English, Turkish, and Spanish using `easy_localization`.
+* **🌓 Dynamic Themes:** Switch seamlessly between Light, Dark, or System default themes using `provider`.
+* **🔐 Google Sign-In & Cloud Sync:** Users can use the app as a Guest (saving data locally) or sign in with Google to sync their favorite locations to the cloud database.
+* **📍 Smart Location & Autocomplete:** Uses GPS to fetch current weather and features a fast, auto-completing search bar for discovering new cities globally.
+* **🛡️ Robust Error Handling:** Built-in safeguards against JSON parsing errors and API failures ensuring a crash-free experience.
+
+## 📸 Screenshots
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.0+-02569B?style=for-the-badge&logo=flutter" alt="Flutter">
-  <img src="https://img.shields.io/badge/Dart-3.0+-0175C2?style=for-the-badge&logo=dart" alt="Dart">
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android" alt="Android">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+  <a href="https://freeimage.host/i/qCBs5Yl"><img src="https://iili.io/qCBs5Yl.md.png" alt="qCBs5Yl.md.png" border="0" width="30%"></a>
+  <a href="https://freeimage.host/i/qCBsTEG"><img src="https://iili.io/qCBsTEG.md.png" alt="qCBsTEG.md.png" border="0" width="30%"></a>
+  <a href="https://freeimage.host/i/qCBsECu"><img src="https://iili.io/qCBsECu.md.png" alt="qCBsECu.md.png" border="0" width="30%"></a>
 </p>
 
-<p align="center">
-  <a href="#-özellikler">Özellikler</a> •
-  <a href="#-kurulum">Kurulum</a> •
-  <a href="#-teknolojiler">Teknolojiler</a> •
-  <a href="#-lisans">Lisans</a>
-</p>
+## 🚀 Getting Started
 
-<div align="center">
+### Prerequisites
+- Flutter SDK (latest stable version)
+- A running instance of the MooWeather C# API (Update `baseUrl` in `lib/services/api_service.dart`)
 
-[**⬇️ Son Sürüm APK İndir (v0.1.0)**](https://github.com/cyberQbit/mooweather/releases/latest/download/app-release.apk)
+### Installation
+1. Clone the repository:
+   ```
+   git clone [https://github.com/SENIN_KULLANICI_ADIN/MooWeather-Mobile.git](https://github.com/SENIN_KULLANICI_ADIN/MooWeather-Mobile.git)
 
-*Minimum: Android 5.0 (API 21) • Dosya Boyutu: 50 MB*
-
-</div>
-
----
-
-## 📱 Proje Hakkında
-
-MooWeather, modern Flutter framework'ü ile geliştirilmiş, AccuWeather ve Google Weather'dan ilham alan bir tasarıma sahip hava durumu uygulamasıdır. Türkçe dil desteği, glassmorphism efektleri ve akıcı animasyonlarla zenginleştirilmiş kullanıcı dostu bir deneyim sunar.
-
-**🎯 Proje Amacı:** Bu uygulama, bir **üniversite bilgisayar programlama dersi projesi** kapsamında, modern mobil uygulama geliştirme tekniklerini öğrenmek ve uygulamak amacıyla geliştirilmiştir.
-
----
-
-## ✨ Özellikler
-
-### 🎨 Modern UI/UX
-- ✅ **AccuWeather Tarzı Tasarım:** Profesyonel, modern ve minimalist arayüz.
-- ✅ **Glassmorphism Efektleri:** Yarı saydam, bulanık arka planlı şık kartlar.
-- ✅ **Dinamik Gradient Arka Planlar:** Hava durumuna (açık, bulutlu, yağmurlu vb.) göre değişen arayüz renkleri.
-- ✅ **Akıcı Animasyonlar:** Pull-to-refresh ve "shimmer" iskelet yükleme animasyonları.
-- ✅ **Duyarlı Tasarım:** Klavye açıldığında taşma yapmayan, uyumlu arayüz.
-
-### 🔧 Teknik Üstünlükler
-- ✅ **Multi-API Key Rotation:** Kesintisiz hizmet için 4 farklı API anahtarı arasında otomatik geçiş.
-- ✅ **Retry Logic:** Ağ hatası durumunda `exponential backoff` stratejisiyle 3 kez yeniden deneme.
-- ✅ **Rate Limiting:** API limit aşımı hatalarını önlemek için istemci taraflı istek sınırlama.
-- ✅ **8 Farklı Custom Exception:** Detaylı ve yönetilebilir hata takibi için özel istisna sınıfları.
-- ✅ **Güvenli API Yönetimi:** API anahtarlarının `.env` dosyası ile koddan soyutlanarak güvenli bir şekilde saklanması.
-- ✅ **Logger Entegrasyonu:** Sadece debug modunda çalışan detaylı loglama sistemi.
-
-### 🇹🇷 Kapsamlı Türkçe Lokalizasyon
-- ✅ **80+ Terim Çevirisi:** Hava durumuyla ilgili 80'den fazla terimin Türkçe karşılığı.
-- ✅ **Tamamen Türkçe Arayüz:** Uygulamanın tüm menü ve açıklamaları Türkçe.
-- ✅ **Türkçe Şehir Arama Desteği:** Arama fonksiyonu Türkçe karakterlerle uyumlu.
-
-### 🌍 Hava Durumu Verileri
-- ✅ **Anlık Durum:** Sıcaklık, hissedilen sıcaklık, nem, basınç, rüzgar hızı ve görüş mesafesi.
-- ✅ **Saatlik ve Günlük Tahminler:** Gelecek saatler ve günler için hava durumu öngörüleri.
-- ✅ **GPS Desteği:** Cihazın konumunu otomatik olarak algılayarak hava durumunu gösterme.
-- ✅ **Manuel Arama:** İstenilen şehri aratarak hava durumunu öğrenme.
-
----
-
-## 🛠️ Teknolojiler
-
-| Teknoloji | Versiyon | Amaç |
-|:--- |:--- |:--- |
-| **Flutter** | 3.0+ | Cross-Platform UI Framework |
-| **Dart** | 3.0+ | Programlama Dili |
-| **Riverpod** | ^2.5.1 | State Management (Modern ve Güvenli) |
-| **OpenWeatherMap API**| v2.5 | Hava Durumu Veri Sağlayıcısı |
-| **flutter_dotenv** | ^6.0.0 | Güvenli API Anahtarı Yönetimi |
-| **http** | ^1.2.1 | RESTful API Çağrıları |
-| **geolocator** | ^11.0.0 | GPS Konum Servisleri |
-| **logger** | ^2.6.2 | Detaylı Hata Ayıklama (Debug) Logları |
-| **shimmer** | ^3.0.0 | Modern Yükleme Animasyonları |
-
----
-
-## 🚀 Kurulum
-
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
-
-### 1. Gereksinimler
-- Flutter SDK (versiyon 3.0.0 veya üstü)
-- Android Studio veya VS Code
-- Android Emülatör veya Fiziksel Cihaz (API 21+)
-
-### 2. Projeyi Klonlayın
-```bash
-git clone [https://github.com/cyberQbit/mooweather.git](https://github.com/cyberQbit/mooweather.git)
-cd mooweather
+2. Install dependencies:
 ```
-
-### 3. Bağımlılıkları Yükleyin
-```bash
 flutter pub get
 ```
 
-### 4. API Anahtarını Ayarlayın
-Projenin çalışması için bir OpenWeatherMap API anahtarına ihtiyacınız var.
-
-- Proje kök dizininde `.env` adında bir dosya oluşturun.
-- [OpenWeatherMap](https.org/api) adresinden ücretsiz bir API anahtarı alın.
-- Oluşturduğunuz `.env` dosyasına anahtarınızı aşağıdaki gibi ekleyin:
-
-```env
-OPENWEATHER_API_KEY=BURAYA_API_ANAHTARINIZI_YAPISTIRIN
-# Birden fazla anahtar ekleyerek 'key rotation' özelliğini kullanabilirsiniz
-# OPENWEATHER_API_KEY_2=IKINCI_ANAHTAR
-# OPENWEATHER_API_KEY_3=UCUNCU_ANAHTAR
+3. Run the app:
 ```
-
-### 5. Uygulamayı Çalıştırın
-```bash
 flutter run
 ```
-
----
-
-## 📄 Lisans
-
-Bu proje, **MIT Lisansı** altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına göz atabilirsiniz.
-
----
-
-## 🙏 Teşekkürler
-- Hava durumu verileri için [OpenWeatherMap](https://openweathermap.org/)
-- Harika UI framework'ü için [Flutter](https://flutter.dev/)
-- Modern state management çözümü için [Riverpod](https://riverpod.dev/)
-- Tasarım ilhamı için [AccuWeather](https://www.accuweather.com/)
-
-<div align="center">
-  <br>
-  <strong>MooWeather</strong> - Hava durumu her an yanınızda!
-  <br>
-  <small>Aydın (cyberQbit) Aydemir tarafından geliştirildi.</small>
-</div>

@@ -1,4 +1,4 @@
-package com.example.mooweather
+package com.cyberqbit.mooweather
 
 import io.flutter.embedding.android.FlutterActivity
 

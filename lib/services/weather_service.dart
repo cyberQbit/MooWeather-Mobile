@@ -1,5 +1,8 @@
 // lib/services/weather_service.dart
 
+// Tüm hava durumu API işlemlerimi burada topluyorum.
+// Not: Her fonksiyonun başına ve önemli bloklara açıklama ekliyorum, ilerde API yönetimini hızlıca kavrayabilmek için.
+
 import 'dart:convert';
 import 'dart:async';
 import 'package:http/http.dart' as http;
@@ -10,8 +13,10 @@ import '../models/weather_model.dart';
 import '../models/weather_exceptions.dart';
 
 class WeatherService {
+  // Logger: hata ayıklama ve log için kullanıyorum
   static final Logger _logger = Logger(printer: PrettyPrinter(methodCount: 0));
 
+  /// .env dosyasından API anahtarlarını çeker
   static List<String> get _apiKeys {
     final keys = <String>[];
     for (int i = 1; i <= 4; i++) {
@@ -23,13 +28,17 @@ class WeatherService {
     return keys;
   }
 
+  // API anahtarları arasında geçiş için index
   static int _currentKeyIndex = 0;
+
+  /// Şu an kullanılan API anahtarı
   static String get _currentApiKey {
     final keys = _apiKeys;
     if (keys.isEmpty) throw InvalidApiKeyException();
     return keys[_currentKeyIndex % keys.length];
   }
 
+  /// API anahtarını döngüsel olarak değiştirir (rate limit için)
   static void _rotateApiKey() {
     _currentKeyIndex++;
     if (kDebugMode)
@@ -37,13 +46,16 @@ class WeatherService {
           (_currentKeyIndex % _apiKeys.length + 1).toString());
   }
 
+  // API endpoint sabitleri
   static const String CURRENT_WEATHER_BASE_URL =
       'https://api.openweathermap.org/data/2.5/weather';
   static const String GEOCODING_BASE_URL =
       'https://api.openweathermap.org/geo/1.0/direct';
 
+  // Son istek zamanı (rate limit için)
   DateTime? _lastRequestTime;
 
+  /// API rate limitine takılmamak için istekler arası bekleme
   Future<void> _checkRateLimit() async {
     if (_lastRequestTime != null) {
       final elapsed = DateTime.now().difference(_lastRequestTime!);
@@ -54,6 +66,7 @@ class WeatherService {
     _lastRequestTime = DateTime.now();
   }
 
+  /// API'ye istek atar, hata olursa tekrar dener
   Future<http.Response> _makeRequest(Uri url, {int maxRetries = 3}) async {
     await _checkRateLimit();
     for (int attempt = 1; attempt <= maxRetries; attempt++) {

@@ -2,61 +2,60 @@
 
 import 'package:flutter/material.dart';
 
-/// Bu dosya uygulamanın renk paletini içerir
-/// Her hava durumuna özel gradient renkleri tanımlanmıştır
-///
-/// Öğrenci Notu: Bu tarz constant dosyaları oluşturmak,
-/// kodun okunabilirliğini ve bakımını kolaylaştırır
+// Uygulamanın tüm renk paletini burada topluyorum.
+// Not: Renkleri merkezi bir yerde tutmak, ileride tema değişikliği veya yeni hava durumu eklemek için çok kolaylık sağlar.
+// Kendi notum: Her bir hava durumu için gradient tanımlamak, UI'da dinamik ve modern bir his veriyor.
 class AppColors {
-  // Ana renk paleti
-  static const primary = Color(0xFF4A90E2);
-  static const primaryBlue = Color(0xFF4A90E2);
-  static const darkBlue = Color(0xFF2C3E50);
-  static const lightGrey = Color(0xFFF0F4F8);
-  static const darkGrey = Color(0xFF95A5A6);
-  static const white = Color(0xFFFFFFFF);
+  // Ana renkler (logo, buton, başlık vs. için)
+  static const primary = Color(0xFF4A90E2); // Ana mavi
+  static const primaryBlue = Color(0xFF4A90E2); // Yedek ana mavi
+  static const darkBlue = Color(0xFF2C3E50); // Koyu mavi
+  static const lightGrey = Color(0xFFF0F4F8); // Açık gri (arka plan)
+  static const darkGrey = Color(0xFF95A5A6); // Koyu gri (ikincil yazı)
+  static const white = Color(0xFFFFFFFF); // Saf beyaz
 
   // Hava durumuna göre gradient renkleri
-  // Açık Hava (Clear/Sunny)
+  // Açık Hava (Clear/Sunny) için gradient
   static const List<Color> clearDayGradient = [
-    Color(0xFF56CCF2), // Açık mavi
-    Color(0xFF2F80ED), // Koyu mavi
+    Color(0xFF56CCF2), // Açık mavi (gündüz gökyüzü)
+    Color(0xFF2F80ED), // Koyu mavi (ufuk)
   ];
 
+  // Gece açık hava için gradient
   static const List<Color> clearNightGradient = [
-    Color(0xFF0F2027), // Koyu lacivert
+    Color(0xFF0F2027), // Koyu lacivert (gece gökyüzü)
     Color(0xFF203A43), // Orta lacivert
     Color(0xFF2C5364), // Açık lacivert
   ];
 
-  // Bulutlu (Clouds)
+  // Bulutlu hava için gradient
   static const List<Color> cloudsGradient = [
-    Color(0xFF536976), // Koyu gri
-    Color(0xFFBBD2C5), // Açık gri-yeşil
+    Color(0xFF536976), // Koyu gri (bulut)
+    Color(0xFFBBD2C5), // Açık gri-yeşil (gökyüzü)
   ];
 
-  // Yağmurlu (Rain)
+  // Yağmurlu hava için gradient
   static const List<Color> rainGradient = [
-    Color(0xFF2C3E50), // Koyu gri-mavi
-    Color(0xFF3498DB), // Mavi
+    Color(0xFF2C3E50), // Koyu gri-mavi (yağmur bulutu)
+    Color(0xFF3498DB), // Mavi (yağmur damlası)
   ];
 
-  // Karlı (Snow)
+  // Karlı hava için gradient
   static const List<Color> snowGradient = [
-    Color(0xFFE0EAFC), // Çok açık mavi
-    Color(0xFFCFDEF3), // Açık mavi
+    Color(0xFFE0EAFC), // Çok açık mavi (kar)
+    Color(0xFFCFDEF3), // Açık mavi (buz)
   ];
 
-  // Fırtına (Thunderstorm)
+  // Fırtına için gradient
   static const List<Color> stormGradient = [
-    Color(0xFF141E30), // Çok koyu mavi
+    Color(0xFF141E30), // Çok koyu mavi (fırtına bulutu)
     Color(0xFF243B55), // Koyu mavi
   ];
 
-  // Thunderstorm için alias (kod uyumluluğu)
+  // Thunderstorm için alias (fırtına ile aynı gradient)
   static const List<Color> thunderstormGradient = stormGradient;
 
-  // Sisli/Dumanlı (Mist/Fog)
+  // Sisli/Dumanlı hava için gradient (devamı aşağıda)
   static const List<Color> mistGradient = [
     Color(0xFF757F9A), // Gri-mavi
     Color(0xFFD7DDE8), // Açık gri

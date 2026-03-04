@@ -1,10 +1,12 @@
 // lib/screens/search_screen.dart
 //
-// Şehir arama ekranı
+// Şehir arama ekranı.
+// Not: Kullanıcıdan şehir ismi alıp, hava durumu araması başlatmak için kullanıyorum.
 
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
+/// Şehir arama ekranı widget'ı
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -13,10 +15,12 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  // Şehir ismini almak için controller
   final TextEditingController _cityController = TextEditingController();
 
   @override
   void dispose() {
+    // Controller'ı dispose etmeyi unutma!
     _cityController.dispose();
     super.dispose();
   }
@@ -27,6 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
       // Klavye açıldığında içeriği yukarı kaydır
       resizeToAvoidBottomInset: true,
       body: Container(
+        // Arka planı gradient ile boyuyorum (gündüz açık hava teması)
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -42,6 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 padding: const EdgeInsets.all(AppDimens.paddingLarge),
                 child: Row(
                   children: [
+                    // Geri butonu (navigasyon için)
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.2),

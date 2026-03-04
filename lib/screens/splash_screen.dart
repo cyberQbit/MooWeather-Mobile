@@ -1,10 +1,8 @@
-// lib/screens/splash_screen.dart
-//
-// Splash screen - Uygulama açılış ekranı
-
 import 'package:flutter/material.dart';
-import '../widgets/moo_logo.dart';
-import '../constants/app_colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
+import 'home_screen.dart';
+import 'onboarding_screen.dart'; // Birazdan oluşturacağımız karşılama ekranı
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,101 +11,63 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _fadeAnimation;
-
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 1500),
-      vsync: this,
-    );
+    _routeUser();
+  }
 
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeIn,
-    ));
+  Future<void> _routeUser() async {
+    final prefs = await SharedPreferences.getInstance();
+    // Eğer 'is_first_time' diye bir kayıt yoksa (null dönerse), demek ki ilk defa giriyordur (true kabul et)
+    final isFirstTime = prefs.getBool('is_first_time') ?? true;
 
-    _controller.forward();
+    Timer(const Duration(milliseconds: 2500), () {
+      if (!mounted) return;
 
-    // 3 saniye sonra ana ekrana geç
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
-        // Burada ana ekrana navigation yapılacak
-        // Navigator.of(context).pushReplacement(...);
+      if (isFirstTime) {
+        // İlk defa giriyorsa kırmızı halıya (Onboarding) gönder
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+        );
+      } else {
+        // Zaten eski müşteriyse direkt Ana Sayfaya (Home) al
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
       }
     });
   }
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: AppColors.clearDayGradient,
-          ),
-        ),
-        child: Center(
-          child: FadeTransition(
-            opacity: _fadeAnimation,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Animasyonlu logo
-                const MooLogo(
-                  size: 200,
-                  animated: true,
-                ),
-                const SizedBox(height: 32),
-                // Uygulama adı
-                const Text(
-                  'MooWeather',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 1.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Hava durumu her an yanınızda',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white.withOpacity(0.9),
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                const SizedBox(height: 48),
-                // Loading indicator
-                SizedBox(
-                  width: 40,
-                  height: 40,
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      Colors.white.withOpacity(0.8),
-                    ),
-                    strokeWidth: 3,
-                  ),
-                ),
-              ],
+      backgroundColor: const Color(0xFF0F2027), // Karanlık tema arka planı
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/logo.png',
+                height: 120), // Logonun yolu doğru olmalı
+            const SizedBox(height: 20),
+            const Text(
+              'MooWeather',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
             ),
-          ),
+            const SizedBox(height: 10),
+            Text(
+              'Sizin Hava Durumu Asistanınız',
+              style: TextStyle(fontSize: 16, color: Colors.grey[400]),
+            ),
+          ],
         ),
       ),
     );

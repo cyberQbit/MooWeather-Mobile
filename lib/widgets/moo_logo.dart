@@ -1,11 +1,12 @@
 // lib/widgets/moo_logo.dart
 //
-// MooWeather özel logo widget'ı
-// Animasyonlu, modern, gradient renkli logo
+// MooWeather özel logo widget'ım.
+// Not: Hem animasyonlu hem statik versiyonu var. Gradient renklerle modern bir görünüm sağlıyor.
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+/// Ana logo widget'ı (animasyonlu veya statik)
 class MooLogo extends StatelessWidget {
   final double size;
   final bool animated;
@@ -18,14 +19,16 @@ class MooLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Animasyonlu logo mu gösterilecek?
     if (animated) {
       return _AnimatedMooLogo(size: size);
     }
+    // Yoksa statik logo
     return _StaticMooLogo(size: size);
   }
 }
 
-// Statik logo (app icon için)
+/// Statik logo (ör: app icon için)
 class _StaticMooLogo extends StatelessWidget {
   final double size;
 
@@ -43,7 +46,7 @@ class _StaticMooLogo extends StatelessWidget {
   }
 }
 
-// Animasyonlu logo (splash screen için)
+/// Animasyonlu logo (ör: splash screen için)
 class _AnimatedMooLogo extends StatefulWidget {
   final double size;
 
@@ -55,6 +58,7 @@ class _AnimatedMooLogo extends StatefulWidget {
 
 class _AnimatedMooLogoState extends State<_AnimatedMooLogo>
     with SingleTickerProviderStateMixin {
+  // Animasyon controller'ı
   late AnimationController _controller;
   late Animation<double> _rotationAnimation;
   late Animation<double> _scaleAnimation;

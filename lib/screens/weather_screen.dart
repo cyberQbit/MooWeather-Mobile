@@ -1,10 +1,7 @@
 // lib/screens/weather_screen.dart
 //
-// Ana hava durumu ekranı
-//
-// Öğrenci Notu:
-// Bu ekran, modern hava durumu uygulamalarında (AccuWeather, Google Weather vb.)
-// görülen tasarım prensiplerini kullanır:
+// Ana hava durumu ekranı.
+// Not: Modern hava durumu uygulamalarındaki (AccuWeather, Google Weather vb.) tasarım prensiplerini burada uyguluyorum.
 // - Gradient arka plan (hava durumuna göre dinamik)
 // - Glassmorphism (yarı saydam, bulanık kartlar)
 // - Pull-to-refresh (aşağı çekerek yenile)
@@ -20,13 +17,13 @@ import '../widgets/weather_card.dart';
 import '../widgets/loading_shimmer.dart';
 import '../utils/weather_translator.dart';
 
-/// Ana hava durumu ekranı (ConsumerWidget: Riverpod state'e erişim için)
+/// Ana hava durumu ekranı (Riverpod ile state yönetimi)
 class WeatherScreen extends ConsumerWidget {
   const WeatherScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Hata durumunda SnackBar göster
+    // Hata durumunda kullanıcıya SnackBar ile bildirim gösteriyorum
     ref.listen<AsyncValue<Weather?>>(weatherProvider, (previous, current) {
       if (current.hasError && !current.isLoading) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -46,10 +43,11 @@ class WeatherScreen extends ConsumerWidget {
       }
     });
 
+    // Hava durumu state'ini izliyorum
     final weatherAsyncValue = ref.watch(weatherProvider);
 
     return Scaffold(
-      // Gradient arka plan (hava durumuna göre dinamik renkler)
+      // Arka planı gradient ile boyuyorum (hava durumuna göre dinamik renkler)
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

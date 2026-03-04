@@ -1,14 +1,11 @@
 // lib/utils/weather_translator.dart
 //
-// Hava durumu İngilizce-Türkçe çeviri yardımcısı
-//
-// Öğrenci Notu:
-// OpenWeatherMap API İngilizce veri döndürür
-// Bu sınıf, hava durumu terimlerini Türkçeye çevirir
+// Hava durumu İngilizce-Türkçe çeviri yardımcısı.
+// Not: OpenWeatherMap API İngilizce veri döndürür, bu yüzden UI'da Türkçe göstermek için bu sınıfı kullanıyorum.
 
 class WeatherTranslator {
-  // Ana hava durumu çevirisi
-  // Öğrenci Notu: Map<String, String> yapısı key-value eşleştirmesi yapar
+  // Ana hava durumu çeviri tablosu
+  // Not: Map<String, String> ile hızlıca eşleştirme yapabiliyorum.
   static const Map<String, String> _conditions = {
     // Ana durumlar
     'Clear': 'Açık',

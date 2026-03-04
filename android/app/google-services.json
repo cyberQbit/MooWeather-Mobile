@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1039347948230",
+    "project_id": "mooweather-307c3",
+    "storage_bucket": "mooweather-307c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039347948230:android:a03ed540d644c0afd255c7",
+        "android_client_info": {
+          "package_name": "com.cyberqbit.mooweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039347948230-f0k5ov02n379ck1no57ffq94g1m7vkbk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cyberqbit.mooweather",
+            "certificate_hash": "3b11779a24123f18eb56586b397cf7c81a3b1daa"
+          }
+        },
+        {
+          "client_id": "1039347948230-83vugh16vq6iqo9ur948844f1kus9hqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdDFvLgz-XIDws3S0PsoLwx_RiGwl3TTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039347948230-83vugh16vq6iqo9ur948844f1kus9hqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

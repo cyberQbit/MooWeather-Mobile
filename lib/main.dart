@@ -1,34 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'screens/weather_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
+import 'providers/theme_provider.dart';
+import 'screens/splash_screen.dart';
 
-Future<void> main() async {
-  // dotenv'i yükle
-  await dotenv.load(fileName: ".env");
+void main() async {
+  // Motorları başlatmadan önce Flutter'ın hazır olduğundan emin ol
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
-  // Uygulamayı ProviderScope ile sarıyoruz
-  runApp(const ProviderScope(child: MooWeatherApp()));
+  runApp(
+    // 1. DİL MOTORU:
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('tr', 'TR'),
+        Locale('en', 'US'),
+        Locale('es', 'ES')
+      ],
+      path: 'assets/translations',
+      fallbackLocale:
+          const Locale('tr', 'TR'), // Herhangi bir hata olursa Türkçe aç
+      child: MultiProvider(
+        // 2. TEMA MOTORU:
+        providers: [
+          ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ],
+        child: const MyApp(),
+      ),
+    ),
+  );
 }
 
-class MooWeatherApp extends StatelessWidget {
-  const MooWeatherApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Tema motoruna bağlan
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return MaterialApp(
       title: 'MooWeather',
+      debugShowCheckedModeBanner: false,
+
+      // Dil ayarları
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+
+      // Tema ayarları (Motorun seçtiği temayı uygular)
+      themeMode: themeProvider.themeMode,
       theme: ThemeData(
-        // Modern Arayüz İçin İlk Tema Ayarları
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF4A90E2),
-        ), // Soğuk Mavi Ton
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(
-          0xFFF0F4F8,
-        ), // Açık Gri/Beyaz arka plan
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
       ),
-      home: const WeatherScreen(), // Artık ana ekranımız WeatherScreen
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(0xFF0F2027),
+      ),
+
+      home: const SplashScreen(),
     );
   }
 }

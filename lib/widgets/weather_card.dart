@@ -1,17 +1,12 @@
 // lib/widgets/weather_card.dart
 
+// Modern glassmorphism efektli hava durumu kartı widget'ım.
+// Not: Yarı saydam, bulanık arka planlı kartlar ile modern bir UI elde ediyorum.
+
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Modern glassmorphism efektli hava durumu kartı
-///
-/// Bu widget, modern uygulamalarda kullanılan yarı saydam,
-/// bulanık arka planlı (glassmorphism) kart tasarımını uygular
-///
-/// Öğrenci Notu:
-/// - Bu tarz özel widget'lar oluşturmak, kodun tekrar kullanılabilirliğini artırır
-/// - BackdropFilter widget'ı blur efekti verir
-/// - BoxDecoration ile gradient ve border oluşturulur
+/// Ana hava durumu kartı (glassmorphism efektli)
 class WeatherCard extends StatelessWidget {
   final Widget child;
   final EdgeInsets? padding;
@@ -55,9 +50,8 @@ class WeatherCard extends StatelessWidget {
   }
 }
 
-/// Küçük bilgi kartı (nem, rüzgar, UV indeksi vb. için)
-///
-/// Öğrenci Notu: Bu widget, küçük bilgileri göstermek için
+/// Küçük bilgi kartı (ör: nem, rüzgar, UV indeksi için)
+// Not: Bu widget ile küçük bilgileri şık şekilde gösterebiliyorum.
 /// standart bir format sağlar. DRY (Don't Repeat Yourself) prensibine uygundur
 class InfoCard extends StatelessWidget {
   final IconData icon;

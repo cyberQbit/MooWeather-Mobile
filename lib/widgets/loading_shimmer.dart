@@ -1,15 +1,13 @@
 // lib/widgets/loading_shimmer.dart
 
+// Modern yükleme animasyonu widget'ım.
+// Not: Shimmer paketi ile iskelet ekranı gösteriyorum, kullanıcıya "veri yükleniyor" hissi veriyor.
+
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import '../constants/app_colors.dart';
 
-/// Modern yükleme animasyonu widget'ı
-///
-/// Öğrenci Notu:
-/// - Shimmer paketi, yükleme sırasında gösterilen iskelet ekranları için kullanılır
-/// - Kullanıcıya içeriğin yüklendiğini gösterir (boş ekran yerine)
-/// - Modern uygulamalarda (Facebook, Instagram vb.) yaygın kullanılan bir UX pattern'dir
+/// Yükleme sırasında gösterilen shimmer animasyonu
 class LoadingShimmer extends StatelessWidget {
   const LoadingShimmer({super.key});
 
@@ -28,7 +26,7 @@ class LoadingShimmer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Şehir adı placeholder
+              // Şehir adı için shimmer kutusu
               _buildShimmerBox(
                 width: 150,
                 height: 30,
@@ -37,7 +35,7 @@ class LoadingShimmer extends StatelessWidget {
 
               const SizedBox(height: AppDimens.paddingMedium),
 
-              // Büyük sıcaklık placeholder
+              // Büyük sıcaklık için shimmer kutusu
               Center(
                 child: _buildShimmerBox(
                   width: 200,
@@ -48,7 +46,7 @@ class LoadingShimmer extends StatelessWidget {
 
               const SizedBox(height: AppDimens.paddingSmall),
 
-              // Hava durumu açıklaması placeholder
+              // Hava durumu açıklaması için shimmer kutusu
               Center(
                 child: _buildShimmerBox(
                   width: 180,

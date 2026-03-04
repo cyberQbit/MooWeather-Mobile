@@ -1,4 +1,4 @@
-name: MooWeather
+name: mooweather
 description: A new Flutter project.
 publish_to: 'none'
 version: 1.0.0+1
@@ -10,13 +10,18 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  http: ^1.2.1
+  http: ^1.6.0
   flutter_riverpod: ^2.5.1
-  geolocator: ^11.0.0
+  geolocator: ^11.1.0
   flutter_dotenv: ^6.0.0
-  shared_preferences: ^2.5.3
+  shared_preferences: ^2.5.4
   logger: ^2.6.2
   shimmer: ^3.0.0
+  google_sign_in: ^6.2.1
+  intl: ^0.20.2
+  geocoding: ^4.0.0
+  easy_localization: ^3.0.8
+  provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +32,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/logo.png
     - assets/icons/
+    - assets/places.json
     - .env
+    - assets/google_logo.png
+    - assets/translations/
 
 # Logo konfigürasyonu
 flutter_launcher_icons:

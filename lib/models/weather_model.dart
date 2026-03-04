@@ -1,16 +1,33 @@
 // lib/models/weather_model.dart
 
+// Hava durumu verilerini temsil eden ana modelim.
+// Not: Tüm alanları ve factory fonksiyonunu detaylıca açıklıyorum, ilerde veri yapısını hızlıca kavrayabilmek için.
 class Weather {
+  /// Şehir adı (örn: İstanbul)
   final String cityName;
-  final double temperature;
-  final String mainCondition;
-  final double humidity;
-  final double windSpeed;
-  final double pressure; // Basınç (hPa)
-  final double feelsLike; // Hissedilen sıcaklık
 
-  // Anlık API'de veri olmasa da, UI/Model bütünlüğünü korumak için tutuyoruz.
+  /// Anlık sıcaklık (°C)
+  final double temperature;
+
+  /// Ana hava durumu (örn: Clear, Rain)
+  final String mainCondition;
+
+  /// Nem oranı (%)
+  final double humidity;
+
+  /// Rüzgar hızı (m/s)
+  final double windSpeed;
+
+  /// Basınç (hPa)
+  final double pressure;
+
+  /// Hissedilen sıcaklık (°C)
+  final double feelsLike;
+
+  /// Saatlik tahminler (UI'da saatlik gösterim için)
   final List<HourlyForecast> hourlyForecasts;
+
+  /// Günlük tahminler (UI'da haftalık gösterim için)
   final List<DailyForecast> dailyForecasts;
 
   Weather({
@@ -25,9 +42,10 @@ class Weather {
     required this.dailyForecasts,
   });
 
-  // One Call API JSON Formatına uygun Factory metodu
+  /// JSON'dan Weather nesnesi oluşturan factory.
+  /// Not: OpenWeatherMap One Call API'ye göre parse ediyorum.
   factory Weather.fromJson(Map<String, dynamic> json) {
-    // Anlık Durum
+    // Anlık hava durumu verisi
     final current = json['current'];
     final temp = (current['temp'] as num).toDouble();
     final condition = current['weather'][0]['main'];
@@ -36,7 +54,7 @@ class Weather {
     final pressure = (current['pressure'] as num).toDouble();
     final feelsLike = (current['feels_like'] as num).toDouble();
 
-    // Saatlik Tahminler (opsiyonel, boş liste varsayılanı)
+    // Saatlik tahminler (opsiyonel, yoksa boş liste)
     final List<HourlyForecast> hourly = [];
     if (json.containsKey('hourly') && json['hourly'] is List) {
       hourly.addAll((json['hourly'] as List)
@@ -44,7 +62,7 @@ class Weather {
           .toList());
     }
 
-    // Günlük Tahminler (opsiyonel, boş liste varsayılanı)
+    // Günlük tahminler (opsiyonel, yoksa boş liste)
     final List<DailyForecast> daily = [];
     if (json.containsKey('daily') && json['daily'] is List) {
       daily.addAll((json['daily'] as List)
@@ -54,7 +72,7 @@ class Weather {
 
     return Weather(
       cityName: json['fetched_city_name'] ??
-          'Bilinmeyen Şehir', // Servisten eklediğimiz adı kullanıyoruz
+          'Bilinmeyen şehir', // API'den gelmezse default şehir adı
       temperature: temp,
       mainCondition: condition,
       humidity: humidity,

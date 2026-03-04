@@ -22,9 +22,9 @@ MooWeather is a modern, feature-rich weather application built with Flutter. It 
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://freeimage.host/i/qCBsTEG" width="30%" title="Dark Mode">
-  <img src="https://freeimage.host/i/qCBs5Yl" width="30%" title="Light Mode">
-  <img src="https://freeimage.host/i/qCBsECu" width="30%" title="Weather Detail">
+  <a href="https://freeimage.host/i/qCBs5Yl"><img src="https://iili.io/qCBs5Yl.md.png" alt="qCBs5Yl.md.png" border="0"></a>
+  <a href="https://freeimage.host/i/qCBsTEG"><img src="https://iili.io/qCBsTEG.md.png" alt="qCBsTEG.md.png" border="0"></a>
+  <a href="https://freeimage.host/i/qCBsECu"><img src="https://iili.io/qCBsECu.md.png" alt="qCBsECu.md.png" border="0"></a>
 </p>
 
 ## 🚀 Getting Started

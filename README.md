@@ -43,21 +43,15 @@ MooWeather, Flutter ile geliştirilmiş, modern ve zengin özelliklere sahip bir
    ```bash
    git clone [https://github.com/cyberQbit/MooWeather-Mobile.git](https://github.com/cyberQbit/MooWeather-Mobile.git)
 
-```
-
 2. Bağımlılıkları yükleyin:
 ```bash
 flutter pub get
-
 ```
-
 
 3. Uygulamayı çalıştırın:
 ```bash
 flutter run
-
 ```
-
 
 
 ---

@@ -1,7 +1,8 @@
 <img width="1373" height="2857" alt="Screenshot_2026-03-04-11-07-36-405_com cyberqbit mooweather-edit" src="https://github.com/user-attachments/assets/b699c542-74b6-4b94-972b-1945b2a68e17" />
 <img width="1373" height="2857" alt="Screenshot_2026-03-04-11-06-26-778_com cyberqbit mooweather-edit" src="https://github.com/user-attachments/assets/1355d287-410f-4b71-b4ae-1c10052c0271" />
 <img width="1373" height="2857" alt="Screenshot_2026-03-04-11-06-37-899_com cyberqbit mooweather-edit" src="https://github.com/user-attachments/assets/c480b6f0-b309-442f-b9df-0c4f1ef3946a" />
-# 🌤️ MooWeather - Advanced Full-Stack Weather App
+
+## 🌤️ MooWeather - Advanced Full-Stack Weather App
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
@@ -23,11 +24,12 @@ MooWeather is a modern, feature-rich weather application built with Flutter. It 
 * **🛡️ Robust Error Handling:** Built-in safeguards against JSON parsing errors and API failures ensuring a crash-free experience.
 
 ## 📸 Screenshots
-*(Buraya GitHub'da uygulamanın ekran görüntülerini yan yana koyabilirsin)*
-| Dark Mode | Light Mode | Detail Screen |
-| :---: | :---: | :---: |
-| <img src="[link_to_dark_image](https://freeimage.host/i/qCBsTEG)" width="200"> | <img src="[link_to_light_image](https://freeimage.host/i/qCBs5Yl)" width="200"> | <img src="[link_to_detail_image](https://freeimage.host/i/qCBsECu)" width="200"> |
 
+<p align="center">
+  <img src="https://freeimage.host/i/qCBsTEG" width="30%" title="Dark Mode">
+  <img src="https://freeimage.host/i/qCBs5Yl" width="30%" title="Light Mode">
+  <img src="https://freeimage.host/i/qCBsECu" width="30%" title="Weather Detail">
+</p>
 
 ## 🚀 Getting Started
 

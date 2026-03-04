@@ -19,7 +19,13 @@ MooWeather is a modern, feature-rich weather application built with Flutter. It 
 * **📍 Smart Location & Autocomplete:** Uses GPS to fetch current weather and features a fast, auto-completing search bar for discovering new cities globally.
 * **🛡️ Robust Error Handling:** Built-in safeguards against JSON parsing errors and API failures ensuring a crash-free experience.
 
+## 📸 Screenshots
 
+<p align="center">
+  <img src="https://freeimage.host/i/qCBsTEG" width="30%" title="Dark Mode">
+  <img src="https://freeimage.host/i/qCBs5Yl" width="30%" title="Light Mode">
+  <img src="https://freeimage.host/i/qCBsECu" width="30%" title="Weather Detail">
+</p>
 
 ## 🚀 Getting Started
 

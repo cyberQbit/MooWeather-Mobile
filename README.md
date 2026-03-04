@@ -40,8 +40,9 @@ MooWeather, Flutter ile geliştirilmiş, modern ve zengin özelliklere sahip bir
 
 #### Kurulum
 1. Repoyu klonlayın:
-   ```bash
-   git clone [https://github.com/cyberQbit/MooWeather-Mobile.git](https://github.com/cyberQbit/MooWeather-Mobile.git)
+```bash
+git clone [https://github.com/cyberQbit/MooWeather-Mobile.git](https://github.com/cyberQbit/MooWeather-Mobile.git)
+```
 
 2. Bağımlılıkları yükleyin:
 ```bash
@@ -106,9 +107,3 @@ flutter pub get
 3. Run the app:
 ```bash
 flutter run
-
-```
-
-Bu şekilde hem resimlerin tıklanabilir ve düzgün boyutta olacak, hem kod bloklarındaki sorunlar gidecek, hem de giren adam karşısında şıkır şıkır iki dilli bir vitrin bulacak! Emeğine sağlık kardeşim! 🏆
-
-```

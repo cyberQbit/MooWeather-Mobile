@@ -8,7 +8,7 @@
 MooWeather is a modern, feature-rich weather application built with Flutter. It goes beyond simple API fetching by integrating a custom **C# .NET Backend** for user authentication and cross-device cloud synchronization.
 
 > ⚠️ **Note:** This repository contains only the frontend (Mobile App) source code. To run this app with full functionality, you need the Backend API.
-> 👉 **[Click here for the MooWeather C# .NET Backend Repository](https://github.com/SENIN_KULLANICI_ADIN/MooWeather-Backend)**
+> 👉 **[Click here for the MooWeather C# .NET Backend Repository](https://github.com/cyberQbit/MooWeather-Backend)**
 
 ## ✨ Key Features
 
@@ -33,5 +33,15 @@ MooWeather is a modern, feature-rich weather application built with Flutter. It 
 
 ### Installation
 1. Clone the repository:
-   ```bash
+   ```
    git clone [https://github.com/SENIN_KULLANICI_ADIN/MooWeather-Mobile.git](https://github.com/SENIN_KULLANICI_ADIN/MooWeather-Mobile.git)
+
+2. Install dependencies:
+```
+flutter pub get
+```
+
+3. Run the app:
+```
+flutter run
+```

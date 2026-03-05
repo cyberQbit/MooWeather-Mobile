@@ -5,8 +5,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
-  // C# API Adresimiz (Gerçek cihaz için yerel Wi-Fi IP'si)
-  static const String baseUrl = 'http://10.84.200.84:5149/api/auth';
+  // C# API Adresimiz
+  static const String baseUrl = 'https://mooweather-api.onrender.com/api';
 
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     // DİKKAT: O uzun Web Client ID'ni buraya yapıştırmayı unutma!

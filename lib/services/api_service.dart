@@ -4,8 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 class ApiService {
-  // IP ADRESİNİ BURAYA YAZDIĞINDAN EMİN OL!
-  // Not: Eğer 10.84.200.84 çalışmazsa, bilgisayarının güncel IP'sini ipconfig ile kontrol et.
   static const String baseUrl = 'https://mooweather-api.onrender.com/api';
 
   Future<String?> _getToken() async {

@@ -1,7 +1,7 @@
 
 # 🌤️ MooWeather - Advanced Full-Stack Weather App
 
-[![Download APK](https://img.shields.io/badge/Download_APK-v1.0.0-success?style=for-the-badge&logo=android&logoColor=white)](https://github.com/cyberQbit/MooWeather-Mobile/releases/download/v1.0.0/app-release.apk)
+[![Download APK](https://img.shields.io/badge/Download_APK-v1.0.0-success?style=for-the-badge&logo=android&logoColor=white)](https://github.com/cyberQbit/MooWeather-Mobile/releases/download/v1.0.0/MooWeather.apk)
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)

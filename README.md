@@ -29,9 +29,9 @@ MooWeather, Flutter ile geliştirilmiş, modern ve zengin özelliklere sahip bir
 ### 📸 Ekran Görüntüleri
 
 <p align="center">
-  <a href="https://freeimage.host/i/qCBs5Yl"><img src="https://iili.io/qCBs5Yl.md.png" alt="Light Mode" border="0" width="30%"></a>
-  <a href="https://freeimage.host/i/qCBsTEG"><img src="https://iili.io/qCBsTEG.md.png" alt="Dark Mode" border="0" width="30%"></a>
-  <a href="https://freeimage.host/i/qCBsECu"><img src="https://iili.io/qCBsECu.md.png" alt="Detail Screen" border="0" width="30%"></a>
+  <a href="https://freeimage.host/i/qoIfO9n"><img src="https://iili.io/qoIfO9n.md.png" alt="qoIfO9n.md.png" border="0" width="31%"></a>
+  <a href="https://freeimage.host/i/qoIfkwG"><img src="https://iili.io/qoIfkwG.md.png" alt="qoIfkwG.md.png" border="0" width="31%"></a>
+  <a href="https://freeimage.host/i/qoIfjat"><img src="https://iili.io/qoIfjat.md.png" alt="qoIfjat.md.png" border="0" width="31%"></a>
 </p>
 
 ### 🚀 Başlangıç
@@ -78,9 +78,9 @@ MooWeather is a modern, feature-rich weather application built with Flutter. It 
 ### 📸 Screenshots
 
 <p align="center">
-<a href="https://freeimage.host/i/qCBs5Yl"><img src="https://iili.io/qCBs5Yl.md.png" alt="Light Mode" border="0" width="30%"></a>
-<a href="https://freeimage.host/i/qCBsTEG"><img src="https://iili.io/qCBsTEG.md.png" alt="Dark Mode" border="0" width="30%"></a>
-<a href="https://freeimage.host/i/qCBsECu"><img src="https://iili.io/qCBsECu.md.png" alt="Detail Screen" border="0" width="30%"></a>
+  <a href="https://freeimage.host/i/qoIfO9n"><img src="https://iili.io/qoIfO9n.md.png" alt="qoIfO9n.md.png" border="0" width="31%"></a>
+  <a href="https://freeimage.host/i/qoIfkwG"><img src="https://iili.io/qoIfkwG.md.png" alt="qoIfkwG.md.png" border="0" width="31%"></a>
+  <a href="https://freeimage.host/i/qoIfjat"><img src="https://iili.io/qoIfjat.md.png" alt="qoIfjat.md.png" border="0" width="31%"></a>
 </p>
 
 ### 🚀 Getting Started
